@@ -68,7 +68,9 @@ pipeline {
 
         success {
             echo "Build and test succeeded! Sending email..."
-            
+            // 이메일 전송 (Email Extension Plugin의 mail 스텝 사용)
+            mail to: 'joonseor@gmail.com', subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}", body: "Build succeeded! See ${env.BUILD_URL}"
+
             echo "Email sent for SUCCESS."
         }
     }
