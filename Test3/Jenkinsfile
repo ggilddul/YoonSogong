@@ -82,7 +82,6 @@ pipeline {
                     ${env.BUILD_URL}console
                 """,
                 from: "jenkins@yourdomain.com", // 발신자 이메일 주소 (선택 사항, 설정하지 않으면 Jenkins 기본값 사용)
-                failLog: true // 빌드 로그에서 실패 스택 트레이스 포함
             )
             echo "Email sent for SUCCESS."
         }
